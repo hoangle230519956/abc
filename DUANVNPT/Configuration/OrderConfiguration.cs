@@ -14,6 +14,7 @@ namespace DUANVNPT.Configuration
         {
             builder.ToTable("Orders");
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.ShipEmail).IsRequired().IsUnicode(false).HasMaxLength(50);
         }
     }
 }
