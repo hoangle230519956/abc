@@ -18,7 +18,7 @@ namespace DUANVNPT.EF
                .AddJsonFile("appsetting.json")
                .Build();
 
-            var connectionString = configuration.GetConnectionString("eShopSolutionDb");
+            var connectionString = configuration.GetConnectionString("DuAnVNPTDb");
 
             var optionsBuilder = new DbContextOptionsBuilder<ESHOPDbContent>();
             optionsBuilder.UseSqlServer(connectionString);
