@@ -7,7 +7,5 @@ namespace DUANVNPT.Configuration
 {
     public class OrderConfiguration
     { 
-
-
     }
 }
