@@ -1,6 +1,7 @@
 ﻿using DUANVNPT.Configuration;
 using DUANVNPT.Entities;
 using DUANVNPT.Extensions;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DUANVNPT.EF
 {
-    public class ESHOPDbContent:DbContext
+    public class ESHOPDbContent:IdentityDbContext
     {
         public ESHOPDbContent(DbContextOptions options) : base(options)
         {
