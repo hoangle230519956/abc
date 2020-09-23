@@ -216,8 +216,6 @@ namespace DUANVNPT.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<string>("SeoAlias");
-
                     b.Property<int>("Stock")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(0);

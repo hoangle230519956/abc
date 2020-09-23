@@ -33,9 +33,7 @@ namespace DUANVNPT.EF
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
             //Data seeding
-            modelBuilder.Entity<AppConfig>().HasData(new AppConfig() {
-                Key ="HomeTile" ,Value = "This is home page Du An VNPT"
-            });
+          
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Product> Products { get; set; }
