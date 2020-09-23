@@ -31,6 +31,10 @@ namespace DUANVNPT.Migrations
                     b.HasKey("Key");
 
                     b.ToTable("AppConfig");
+
+                    b.HasData(
+                        new { Key = "HomeTile", Value = "This is home page Du An VNPT" }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.Cart", b =>
@@ -75,6 +79,11 @@ namespace DUANVNPT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new { Id = 1, IsShowOnHome = true, SortOrder = 1, Status = 1 },
+                        new { Id = 2, IsShowOnHome = true, SortOrder = 2, Status = 1 }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.CategoryTranslation", b =>
@@ -111,6 +120,11 @@ namespace DUANVNPT.Migrations
                     b.HasIndex("LanguageId");
 
                     b.ToTable("CategoryTranslations");
+
+                    b.HasData(
+                        new { Id = 1, CategoryId = 1, LanguageId = "vi-VN", Name = "Áo Nam", SeoAlias = "ao-nam", SeoDescription = "Sản phẩm thời trang nam", SeoTitle = "Sản phẩm thời trang nam" },
+                        new { Id = 2, CategoryId = 2, LanguageId = "vi-VN", Name = "Áo Nữ", SeoAlias = "ao-nu", SeoDescription = "Sản phẩm thời trang nu", SeoTitle = "Sản phẩm thời trang nu" }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.Contact", b =>
@@ -157,6 +171,11 @@ namespace DUANVNPT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Languages");
+
+                    b.HasData(
+                        new { Id = "vi-VN", IsDefault = true, Name = "Tiếng Việt" },
+                        new { Id = "en-US", IsDefault = false, Name = "Tiếng Anh" }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.Order", b =>
@@ -227,6 +246,10 @@ namespace DUANVNPT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Product");
+
+                    b.HasData(
+                        new { Id = 1, DateCreated = new DateTime(2020, 9, 23, 16, 37, 46, 996, DateTimeKind.Local), OriginalPrice = 100000m, Price = 20000m, Stock = 0, ViewCount = 0 }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.ProductInCategory", b =>
@@ -240,6 +263,10 @@ namespace DUANVNPT.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductInCategories");
+
+                    b.HasData(
+                        new { CategoryId = 1, ProductId = 1 }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.ProductTranslation", b =>
@@ -279,6 +306,10 @@ namespace DUANVNPT.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductTranslations");
+
+                    b.HasData(
+                        new { Id = 1, Description = "", Details = "Mô tả sản phẩm", LanguageId = "vi-VN", Name = "Áo Sơ Mi Nam Việt Tiến ", ProductId = 1, SeoAlias = "ao-so-mi-nam-viet-tien", SeoDescription = "Sản phẩm thời trang nam", SeoTitle = "Sản phẩm thời trang nam" }
+                    );
                 });
 
             modelBuilder.Entity("DUANVNPT.Entities.Promotion", b =>

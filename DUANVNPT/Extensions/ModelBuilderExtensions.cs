@@ -24,17 +24,72 @@ namespace DUANVNPT.Extensions
                 new Language() { Id = "en-US", Name = "Tiếng Anh", IsDefault = false }
                 );
 
-            modelBuilder.Entity<Category>().HasData(new Category()
-            {
-                IsShowOnHome=true, SortOrder=1, ParentId=null,Status = Status.Active,
-                CategoryTranslations = new List<CategoryTranslation>()
-                {
-                    new CategoryTranslation()
+            modelBuilder.Entity<Category>().HasData(
+                    new Category()
                     {
-                        Name ="Áo Nam", LanguageId="vi-VN",SeoAlias="ao-nam", SeoDescription="Sản phẩm thời trang nam", SeoTitle="Sản phẩm thời trang nam"
-                    }
+                        Id= 1,
+                        IsShowOnHome = true,
+                        SortOrder = 1,
+                        ParentId = null,
+                        Status = Status.Active,
+                    },      
+                     new Category()
+                     {
+                         Id =2,
+                         IsShowOnHome = true,
+                         SortOrder = 2,
+                         ParentId = null,
+                         Status = Status.Active,                   
+                 });
+            modelBuilder.Entity<CategoryTranslation>().HasData(
+                new CategoryTranslation()
+                {
+                    Id=1,
+                    CategoryId =1,
+                    Name = "Áo Nam",
+                    LanguageId = "vi-VN",
+                    SeoAlias = "ao-nam",
+                    SeoDescription = "Sản phẩm thời trang nam",
+                    SeoTitle = "Sản phẩm thời trang nam"
+                },
+                new CategoryTranslation()
+                {
+                    Id=2,
+                    CategoryId=2,
+                    Name = "Áo Nữ",
+                    LanguageId = "vi-VN",
+                    SeoAlias = "ao-nu",
+                    SeoDescription = "Sản phẩm thời trang nu",
+                    SeoTitle = "Sản phẩm thời trang nu"
                 }
-            });
+                );
+            modelBuilder.Entity<Product>().HasData(
+                new Product()
+                {
+                    Id=1,
+                    DateCreated = DateTime.Now,
+                    OriginalPrice = 100000,
+                    Price = 20000, Stock = 0,
+                    ViewCount = 0,                
+                }
+                );
+            modelBuilder.Entity<ProductTranslation>().HasData(
+                 new ProductTranslation()
+                 {
+                     Id=1,
+                     ProductId=1,
+                     Name = "Áo Sơ Mi Nam Việt Tiến ",
+                     LanguageId = "vi-VN",
+                     SeoAlias = "ao-so-mi-nam-viet-tien",
+                     SeoDescription = "Sản phẩm thời trang nam",
+                     SeoTitle = "Sản phẩm thời trang nam",
+                     Details = "Mô tả sản phẩm",
+                     Description = ""
+                 }
+                );
+            modelBuilder.Entity<ProductInCategory>().HasData(
+                new ProductInCategory() { ProductId=1, CategoryId = 1 }
+                );
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DUANVNPT.Configuration;
 using DUANVNPT.Entities;
+using DUANVNPT.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,8 @@ namespace DUANVNPT.EF
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
             //Data seeding
-          
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
+            //base.OnModelCreating(modelBuilder);
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
