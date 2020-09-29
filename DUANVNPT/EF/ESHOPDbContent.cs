@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DUANVNPT.EF
 {
-    public class ESHOPDbContent:IdentityDbContext
+    public class ESHOPDbContent:IdentityDbContext<AppUser,AppRole,Guid>
     {
         public ESHOPDbContent(DbContextOptions options) : base(options)
         {
